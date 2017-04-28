@@ -12,7 +12,7 @@ const App = () => {
     <div>
       <SearchBar />
     </div>
-  ;)
+  );
 }
 
 // Take this component's generated HTML and put it
