@@ -23,9 +23,9 @@ class Modal extends Component {
   _render() {
     ReactDOM.render(
       <Provider store={store}>
-        <div>{this.props.children}</div>
-      </Provider>,
-      this.modalTarget
+        <div>{this.props.children}</div>,
+        this.modalTarget
+      </Provider>
     );
   }
 
