@@ -13,11 +13,12 @@ export default class App extends Component {
         <div className="right">
           <h1>Hello</h1><h2>Hello</h2><h3>Hello</h3><h4>Hello</h4><h5>Hello</h5>
           <div>
-            <Modal>
+            {/*
+            <BadModal>
               <h1>A really long amount of Modal Content</h1>
               <p>Etc.</p>
               <Colors />
-            </Modal>
+            </BadModal>*/}
           </div>
         </div>
       </div>
