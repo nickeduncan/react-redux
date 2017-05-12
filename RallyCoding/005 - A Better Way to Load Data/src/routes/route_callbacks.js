@@ -1,4 +1,4 @@
-import store form '../store';
+import store from '../store';
 import { fetchPhotos } from '../actions';
 
 export function onPhotosEnter() {

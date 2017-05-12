@@ -12,7 +12,7 @@ export default (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <Route path="photos" component={Photos} onEnter{onPhotosEnter}/>
+        <Route path="photos" component={Photos} onEnter={onPhotosEnter}/>
       </Route>
     </Router>
   </Provider>
