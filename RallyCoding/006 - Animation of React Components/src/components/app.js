@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import Faker from 'faker';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 export default class App extends Component {
@@ -31,11 +32,19 @@ export default class App extends Component {
   }
 
   render() {
+    const transitionOptions = {
+      transitionName: "fade",
+      transitionEnterTimeout: 500,
+      transitionLeaveTimeout: 500
+    };
+
     return (
       <div>
         <button onClick={this.onAddClick.bind(this)}>Add</button>
         <ul className="list-group">
-          {this.renderQuotes()}
+          <ReactCSSTransitionGroup {...transitionOptions}>
+            {this.renderQuotes()}
+          </ReactCSSTransitionGroup>
         </ul>
       </div>
     );
