@@ -1,4 +1,3 @@
-import Firebase from 'firebase';
 import _ from 'lodash';
 import {
   FETCH_POSTS,
@@ -6,23 +5,25 @@ import {
   CREATE_POST
 } from './types';
 
-const Posts = new Firebase('https://fbredux.firebaseio.com/');
+const INITIAL_POSTS = { 123: 'One Weird Trick...', 456: 'Bet you wanted to read this.'};
 
 export function fetchPosts() {
-  return dispatch => {
-    Posts.on('value', snapshot => {
-      dispatch({
-        type: FETCH_POSTS,
-        payload: snapshot.val()
-      });
-    });
+  return {
+    type: FETCH_POSTS,
+    payload: INITIAL_POSTS
   };
 }
 
 export function createPost(post) {
-  return dispatch => Posts.push(post);
+  return {
+    type: CREATE_POST,
+    payload: { [_.uniqueId()]: post }
+  };
 }
 
 export function deletePost(key) {
-  return dispatch => Posts.child(key).remove();
+  return {
+    type: DELETE_POST,
+    payload: key
+  };
 }
