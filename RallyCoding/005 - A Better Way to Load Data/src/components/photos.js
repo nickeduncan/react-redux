@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import * as aciton from '../actions';
 
 class UserList extends Component {
-  componentWillMount() {
-    this.props.fetchPhotos();
-  }
-
   renderPhotos() {
     return this.props.photos.map(photo => {
       return (
