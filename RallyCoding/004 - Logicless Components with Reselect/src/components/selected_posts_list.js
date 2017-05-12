@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SelectedPostsSelector from 'selectors/selected_posts';
+import selectedPostsSelector from 'selectors/selected_posts';
 
 const SelectedPostsList = (props) => {
   return (
@@ -16,7 +16,7 @@ const SelectedPostsList = (props) => {
 
 const mapStateToProps = state => {
   return {
-    posts: SelectedPostsSelector(state)
+    posts: selectedPostsSelector(state)
   };
 };
 
